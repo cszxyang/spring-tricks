@@ -1,6 +1,8 @@
 package com.github.cszxyang.handler;
 
-import com.github.cszxyang.request.ServiceReq;
+import com.github.cszxyang.entity.ProcessResult;
+import com.github.cszxyang.entity.ServiceReq;
+import lombok.Data;
 
 /**
  * 通用处理器
@@ -8,6 +10,14 @@ import com.github.cszxyang.request.ServiceReq;
  * @author cszxyang
  * @since 2019/12/22
  */
+@Data
 public abstract class BaseHandler {
-    abstract void process(ServiceReq serviceReq);
+
+    protected int order;
+
+    abstract ProcessResult process(ServiceReq serviceReq);
+
+    boolean isQualified(int order) {
+        return this.order >= order;
+    }
 }

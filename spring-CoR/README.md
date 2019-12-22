@@ -28,3 +28,9 @@ public @interface ProcessOrder {
 }
 ```
 
+为了演示效果，模拟一个场景，陆军中有一些请求文书需要处理，假设它在职级链中从下向上传递，直到找到够权限处理它的军官为止，于是需要了解以下职级（由高到低）：
+
+- General 上将
+- Captain 上尉
+- Lieutenant 中尉
+- Corporal 下士
